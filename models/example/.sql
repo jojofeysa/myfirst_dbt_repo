@@ -7,15 +7,18 @@ where
             "covid_covid_epidemiology__dbt_tmp072659721416"
     );
 
+{{ config (
+    materialized="table"
+)}}
 insert into
     "dbtairbyteproject".public."covid_covid_epidemiology" (
         "key",
-        -- "date",
-        -- "new_tested",
-        -- "new_deceased",
-        -- "total_tested",
-        -- "new_confirmed",
-        -- "new_recovered",
+        "date",
+        "new_tested",
+        "new_deceased",
+        "total_tested",
+        "new_confirmed",
+        "new_recovered",
         "total_deceased",
         "total_confirmed",
         "total_recovered",
@@ -26,12 +29,12 @@ insert into
     ) (
         select
             "key",
-            -- "date",
-            -- "new_tested",
-            -- "new_deceased",
-            -- "total_tested",
-            -- "new_confirmed",
-            -- "new_recovered",
+            "date",
+            "new_tested",
+            "new_deceased",
+            "total_tested",
+            "new_confirmed",
+            "new_recovered",
             "total_deceased",
             "total_confirmed",
             "total_recovered",
